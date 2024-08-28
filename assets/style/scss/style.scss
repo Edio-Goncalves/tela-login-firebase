@@ -19,73 +19,86 @@
     background-color: #d3d3d37c;
     border: 1px solid#f3f3f3;
     border-radius: 10px;
-    label {
-      width: 100%;
-      margin-bottom: 5px;
-      font-size: 12px;
-      text-align: left;
-      color: rgba(0, 0, 0, 0.6);
-    }
-    input {
-      border: none;
-      border-bottom: 1px solid rgb(46, 84, 255);
-      border-top: 1px solid transparent;
-      border-left: 1px solid transparent;
-      border-right: 1px solid transparent;
-      color: rgba(0, 0, 0, 0.8);
-      &:focus {
-        outline: none;
-        border-left: 1px solid rgba(46, 84, 255, 0.2);
-        border-top: 1px solid rgba(46, 84, 255, 0.2);
-        border-right: 1px solid rgba(46, 84, 255, 0.2);
-        border-bottom: 1px solid rgba(46, 84, 255, 0.2);
 
-        &::placeholder {
-          color: transparent;
-        }
-      }
-    }
-    input,
-    button {
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-    button {
-      cursor: pointer;
-      width: 100%;
-      &:active {
-        opacity: 0.8;
-      }
-      &.clear {
-        border: none;
-        border-radius: 5px;
+    > :first-child,
+    > :nth-child(2) {
+      height: 85px;
+      label {
+        font-size: 12px;
+        text-align: left;
         color: rgba(0, 0, 0, 0.6);
-        &:disabled {
-          filter: contrast(0.5);
-          cursor: default;
-          opacity: 0.7;
-        }
       }
-      &.solid,
-      &.outline {
-        background-color: rgb(46, 84, 255);
-        color: #f3f3f3;
+      input {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
         border: none;
-        border: 1px solid rgba(46, 84, 255, 0.2);
-        border-radius: 5px;
-        &:disabled {
-          cursor: default;
-          opacity: 0.7;
+        border-bottom: 1px solid rgb(46, 84, 255);
+        border-top: 1px solid transparent;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        color: rgba(0, 0, 0, 0.8);
+        &:focus {
+          outline: none;
+          border-left: 1px solid rgba(46, 84, 255, 0.2);
+          border-top: 1px solid rgba(46, 84, 255, 0.2);
+          border-right: 1px solid rgba(46, 84, 255, 0.2);
+          border-bottom: 1px solid rgba(46, 84, 255, 0.2);
+
+          &::placeholder {
+            color: transparent;
+          }
         }
-        // &:hover {
-        //   transition: all 0.2s ease-in;
-        //   background-color: white;
-        //   color: rgb(39, 39, 39);
-        // }
       }
-      &.outline {
-        color: rgba(0, 0, 0, 0.664);
-        background-color: white;
+
+      > .error {
+        display: none;
+        width: 100%;
+        font-size: 12px;
+        color: rgba(255, 0, 0, 0.6);
+      }
+    }
+
+    > :nth-child(3),
+    > :nth-child(4),
+    > :last-child {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      button {
+        cursor: pointer;
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 10px;
+        &:active {
+          opacity: 0.8;
+        }
+        &.clear {
+          border: none;
+          border-radius: 5px;
+          color: rgba(0, 0, 0, 0.6);
+          &:disabled {
+            filter: contrast(0.5);
+            cursor: default;
+            opacity: 0.7;
+          }
+        }
+        &.solid,
+        &.outline {
+          background-color: rgb(46, 84, 255);
+          color: #f3f3f3;
+          border: none;
+          border: 1px solid rgba(46, 84, 255, 0.2);
+          border-radius: 5px;
+          &:disabled {
+            cursor: default;
+            opacity: 0.7;
+          }
+        }
+        &.outline {
+          color: rgba(0, 0, 0, 0.664);
+          background-color: white;
+        }
       }
     }
   }

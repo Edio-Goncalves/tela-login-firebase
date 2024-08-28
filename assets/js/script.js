@@ -3,8 +3,6 @@ let passwordField = document.querySelector("#password");
 let recoverPassword = document.querySelector("#recover-password-button");
 let loginButton = document.querySelector("#login-button");
 
-console.log(passwordField);
-
 emailField.addEventListener("input", () => {
   validateField(emailField);
 });

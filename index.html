@@ -18,32 +18,46 @@
   <body>
     <div class="login">
       <form action="">
-        <label>Email</label>
-        <input
-          type="email"
-          name="e-mail"
-          id="email"
-          placeholder="seu@email.com"
-        />
-        <label>Senha</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="senha"
-        />
-        <button
-          class="clear"
-          type="button"
-          id="recover-password-button"
-          disabled
-        >
-          Recuperar senha
-        </button>
-        <button class="solid" type="button" id="login-button" disabled>
-          Entrar
-        </button>
-        <button class="outline" type="button">Registrar</button>
+        <div>
+          <label>Email</label>
+          <input
+            type="email"
+            name="e-mail"
+            id="email"
+            placeholder="seu@email.com"
+          />
+          <div class="error">Email é obrigatório*</div>
+          <div class="error">Email é inválido*</div>
+        </div>
+        <div>
+          <label>Senha</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="senha"
+          />
+          <div class="error">Senha é obrigatória*</div>
+        </div>
+
+        <div>
+          <button
+            class="clear"
+            type="button"
+            id="recover-password-button"
+            disabled
+          >
+            Recuperar senha
+          </button>
+        </div>
+        <div>
+          <button class="solid" type="button" id="login-button" disabled>
+            Entrar
+          </button>
+        </div>
+        <div>
+          <button class="outline" type="button">Registrar</button>
+        </div>
       </form>
     </div>
 
