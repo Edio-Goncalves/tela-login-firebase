@@ -29,9 +29,19 @@
     input {
       border: none;
       border-bottom: 1px solid rgb(46, 84, 255);
+      border-top: 1px solid transparent;
+      border-top: 1px solid transparent;
+      border-right: 1px solid transparent;
+      color: rgba(0, 0, 0, 0.8);
       &:focus {
-        outline: 1px solid;
-        color: rgba(46, 84, 255, 0.342);
+        outline: none;
+        border-left: 1px solid rgba(46, 84, 255, 0.2);
+        border-top: 1px solid rgba(46, 84, 255, 0.2);
+        border-right: 1px solid rgba(46, 84, 255, 0.2);
+
+        &::placeholder {
+          color: transparent;
+        }
       }
     }
     input,
@@ -50,21 +60,22 @@
         border: none;
         color: rgba(0, 0, 0, 0.6);
       }
-      &.solid {
-        background: white;
+      &.solid,
+      &.outline {
+        background-color: rgb(46, 84, 255);
+        color: #f3f3f3;
         border: none;
-        color: rgb(39, 39, 39);
         border: 1px solid rgba(46, 84, 255, 0.2);
         border-radius: 5px;
         &:hover {
-          background: rgb(46, 84, 255);
-          color: #f3f3f3;
+          transition: all 0.2s ease-in;
+          background-color: white;
+          color: rgb(39, 39, 39);
         }
       }
       &.outline {
-        background: transparent;
-        color: white;
-        border: 1px solid white;
+        color: rgba(0, 0, 0, 0.664);
+        background-color: white;
       }
     }
   }
