@@ -1,1 +1,71 @@
 @use "forward" as fw;
+
+.login {
+  font-family: "Exo 2", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+
+  form {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f3f3f37c;
+    border: 1px solid#f3f3f3;
+    border-radius: 10px;
+    label {
+      width: 100%;
+      margin-bottom: 5px;
+      font-size: 12px;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.6);
+    }
+    input {
+      border: none;
+      border-bottom: 1px solid rgb(46, 84, 255);
+      &:focus {
+        outline: 1px solid;
+        color: rgba(46, 84, 255, 0.342);
+      }
+    }
+    input,
+    button {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      cursor: pointer;
+      width: 100%;
+      &:active {
+        opacity: 0.8;
+      }
+      &.clear {
+        background: transparent;
+        border: none;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      &.solid {
+        background: white;
+        border: none;
+        color: rgb(39, 39, 39);
+        border: 1px solid rgba(46, 84, 255, 0.2);
+        border-radius: 5px;
+        &:hover {
+          background: rgb(46, 84, 255);
+          color: #f3f3f3;
+        }
+      }
+      &.outline {
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+      }
+    }
+  }
+}
