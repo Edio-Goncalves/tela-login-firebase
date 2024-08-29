@@ -1,12 +1,19 @@
-let emailField = document.querySelector("#email");
-let passwordField = document.querySelector("#password");
-let recoverPassword = document.querySelector("#recover-password-button");
-let loginButton = document.querySelector("#login-button");
+const form = {
+  email: () => document.querySelector("#email"),
+  emailInvalidError: () => document.querySelector("#email-invalid-error"),
+  emailRequiredError: () => document.querySelector("#email-required-error"),
+  loginButton: () => document.querySelector("#login-button"),
+  password: () => document.querySelector("#password"),
+  passwordRequiredError: () =>
+    document.querySelector("#password-required-error"),
+  recoverPassword: () => document.querySelector("#recover-password-button"),
+};
 
-emailField.addEventListener("input", () => {
+form.email().addEventListener("input", () => {
   onChangeEmail();
 });
-passwordField.addEventListener("input", () => {
+
+form.password().addEventListener("input", () => {
   onChangePassword();
 });
 
@@ -21,7 +28,7 @@ function onChangePassword() {
 }
 
 function isEmailValid() {
-  let em = emailField.value;
+  let em = form.email().value;
   if (!em) {
     return false;
   }
@@ -29,38 +36,27 @@ function isEmailValid() {
 }
 
 function toogleEmailErrors() {
-  let email = emailField.value;
-  if (!email) {
-    document.querySelector("#email-required-error").style = "display:block";
-  } else {
-    document.querySelector("#email-required-error").style = "display:none";
-  }
-
-  if (validateEmail(email)) {
-    document.querySelector("#email-invalid-error").style.display = "none";
-  } else {
-    document.querySelector("#email-invalid-error").style.display = "block";
-  }
+  let email = form.email().value;
+  form.emailRequiredError().style.display = email ? "none" : "block";
+  form.emailInvalidError().style.display = validateEmail(email)
+    ? "none"
+    : "block";
 }
 
 function tooglePassword() {
-  let password = passwordField.value;
-  if (!password) {
-    document.querySelector("#password-required-error").style.display = "block";
-  } else {
-    document.querySelector("#password-required-error").style.display = "none";
-  }
+  let password = form.password().value;
+  form.passwordRequiredError().style.display = password ? "none" : "block";
 }
 
 function toogleButtonsDisable() {
   const emailValid = isEmailValid();
-  recoverPassword.disabled = !emailValid;
+  form.recoverPassword().disabled = !emailValid;
   const passwordValid = isPasswordValid();
-  loginButton.disabled = !passwordValid || !emailValid;
+  form.loginButton().disabled = !passwordValid || !emailValid;
 }
 
 function isPasswordValid() {
-  let pass = passwordField.value;
+  let pass = form.password().value;
   if (!pass) {
     return false;
   }
