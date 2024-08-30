@@ -60,11 +60,24 @@
           </button>
         </div>
         <div>
-          <button class="outline" type="button">Registrar</button>
+          <button class="outline" type="button" id="register">Registrar</button>
         </div>
       </form>
     </div>
 
     <script src="/assets/js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBMaH9kpG7YeadV53rSX_iHYVdzyVOXJK8",
+        authDomain: "login-2b477.firebaseapp.com",
+        projectId: "login-2b477",
+        storageBucket: "login-2b477.appspot.com",
+        messagingSenderId: "809242408627",
+        appId: "1:809242408627:web:5219ad64cb35cd0584e2c6",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>

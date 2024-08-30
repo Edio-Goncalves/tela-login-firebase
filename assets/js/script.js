@@ -7,14 +7,12 @@ const form = {
   passwordRequiredError: () =>
     document.querySelector("#password-required-error"),
   recoverPassword: () => document.querySelector("#recover-password-button"),
+  register: () => document.querySelector("#register"),
 };
 
+/* Executa funções relacionado ao campo de email */
 form.email().addEventListener("input", () => {
   onChangeEmail();
-});
-
-form.password().addEventListener("input", () => {
-  onChangePassword();
 });
 
 function onChangeEmail() {
@@ -22,11 +20,17 @@ function onChangeEmail() {
   toogleButtonsDisable();
 }
 
+/* Executa funções relacionado ao campo de password */
+form.password().addEventListener("input", () => {
+  onChangePassword();
+});
+
 function onChangePassword() {
   toogleButtonsDisable();
   tooglePassword();
 }
 
+/* valida email */
 function isEmailValid() {
   let em = form.email().value;
   if (!em) {
@@ -35,6 +39,28 @@ function isEmailValid() {
   return validateEmail(em);
 }
 
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+/* valida senha */
+function isPasswordValid() {
+  let pass = form.password().value;
+  if (!pass) {
+    return false;
+  }
+  return true;
+}
+
+/* abilita ou desabilita botoes */
+function toogleButtonsDisable() {
+  const emailValid = isEmailValid();
+  form.recoverPassword().disabled = !emailValid;
+  const passwordValid = isPasswordValid();
+  form.loginButton().disabled = !passwordValid || !emailValid;
+}
+
+/* funções de erro */
 function toogleEmailErrors() {
   let email = form.email().value;
   form.emailRequiredError().style.display = email ? "none" : "block";
@@ -48,21 +74,34 @@ function tooglePassword() {
   form.passwordRequiredError().style.display = password ? "none" : "block";
 }
 
-function toogleButtonsDisable() {
-  const emailValid = isEmailValid();
-  form.recoverPassword().disabled = !emailValid;
-  const passwordValid = isPasswordValid();
-  form.loginButton().disabled = !passwordValid || !emailValid;
+/* função para redirecionamento login e registro*/
+form.loginButton().addEventListener("click", () => {
+  login();
+});
+form.register().addEventListener("click", () => {
+  register();
+});
+
+/* integra auth aos botoes e qualifica sucesso ou erro */
+function login() {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(form.email().value, form.password().value)
+    .then((response) => {
+      window.location.href = "pages/home.html";
+    })
+    .catch((error) => {
+      getErrorMessage(error);
+      // console.log("error", error);
+    });
 }
 
-function isPasswordValid() {
-  let pass = form.password().value;
-  if (!pass) {
-    return false;
+function getErrorMessage(error) {
+  if (error.code === "auth/invalid-credential") {
+    alert("Usuário não encontrado");
   }
-  return true;
 }
 
-function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+function register() {
+  window.location.href = "pages/register.html";
 }
