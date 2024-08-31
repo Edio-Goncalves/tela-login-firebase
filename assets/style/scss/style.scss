@@ -33,33 +33,11 @@
         color: rgba(0, 0, 0, 0.6);
       }
       input {
-        width: 100%;
-        padding: 10px;
-        background-color: rgb(255, 255, 255);
-        border: none;
-        border-bottom: 1px solid rgb(46, 84, 255);
-        border-top: 1px solid transparent;
-        border-left: 1px solid transparent;
-        border-right: 1px solid transparent;
-        color: rgba(0, 0, 0, 0.8);
-        &:focus {
-          outline: none;
-          border-left: 1px solid rgba(46, 84, 255, 0.2);
-          border-top: 1px solid rgba(46, 84, 255, 0.2);
-          border-right: 1px solid rgba(46, 84, 255, 0.2);
-          border-bottom: 1px solid rgba(46, 84, 255, 0.2);
-
-          &::placeholder {
-            color: transparent;
-          }
-        }
+        @include fw.input-style;
       }
 
       > .error {
-        display: none;
-        width: 100%;
-        font-size: 12px;
-        color: rgba(255, 0, 0, 0.6);
+        @include fw.error-style;
       }
     }
 
@@ -70,38 +48,18 @@
       display: flex;
       justify-content: center;
       button {
-        cursor: pointer;
-        width: 80%;
-        padding: 10px;
-        margin-bottom: 10px;
-        &:active {
-          opacity: 0.8;
-        }
-        &.clear {
-          border: none;
-          border-radius: 5px;
-          color: rgba(0, 0, 0, 0.6);
-          &:disabled {
-            filter: contrast(0.5);
-            cursor: default;
-            opacity: 0.7;
-          }
-        }
-        &.solid,
+        @include fw.button-style(
+          rgb(46, 84, 255),
+          #f3f3f3,
+          rgba(46, 84, 255, 0.2)
+        );
+
         &.outline {
-          background-color: rgb(46, 84, 255);
-          color: #f3f3f3;
-          border: none;
-          border: 1px solid rgba(46, 84, 255, 0.2);
-          border-radius: 5px;
-          &:disabled {
-            cursor: default;
-            opacity: 0.7;
-          }
-        }
-        &.outline {
-          color: rgba(0, 0, 0, 0.664);
-          background-color: white;
+          @include fw.button-style(
+            white,
+            rgba(0, 0, 0, 0.664),
+            rgba(46, 84, 255, 0.2)
+          );
         }
       }
     }

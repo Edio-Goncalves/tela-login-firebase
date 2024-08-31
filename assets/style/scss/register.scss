@@ -23,65 +23,31 @@ body {
       flex-direction: column;
       align-items: center;
 
-      input,
-      label {
-        text-align: left;
-        width: 100%;
+      input {
+        @include fw.input-style;
       }
+
       label {
+        width: 100%;
         font-size: 16px;
         margin-bottom: 5px;
         text-align: left;
         color: rgba(0, 0, 0, 0.6);
       }
-      input {
-        width: 100%;
-        padding: 10px;
-        background-color: rgb(255, 255, 255);
-        border: none;
-        border-bottom: 1px solid rgb(46, 84, 255);
-        border-top: 1px solid transparent;
-        border-left: 1px solid transparent;
-        border-right: 1px solid transparent;
-        color: rgba(0, 0, 0, 0.8);
-        &:focus {
-          outline: none;
-          border-left: 1px solid rgba(46, 84, 255, 0.2);
-          border-top: 1px solid rgba(46, 84, 255, 0.2);
-          border-right: 1px solid rgba(46, 84, 255, 0.2);
-          border-bottom: 1px solid rgba(46, 84, 255, 0.2);
-
-          &::placeholder {
-            color: transparent;
-          }
-        }
-      }
 
       button {
-        cursor: pointer;
-        background-color: red;
-        width: 80%;
-        padding: 10px;
-        margin-bottom: 10px;
+        @include fw.button-style(
+          rgb(46, 84, 255),
+          #f3f3f3,
+          rgba(46, 84, 255, 0.2)
+        );
 
-        &.solid,
         &.outline {
-          background-color: rgb(46, 84, 255);
-          color: #f3f3f3;
-          border: none;
-          border: 1px solid rgba(46, 84, 255, 0.2);
-          border-radius: 5px;
-        }
-        &.solid {
-          margin-top: 20px;
-          &:disabled {
-            cursor: default;
-            opacity: 0.7;
-          }
-        }
-        &.outline {
-          color: rgba(0, 0, 0, 0.664);
-          background-color: white;
+          @include fw.button-style(
+            white,
+            rgba(0, 0, 0, 0.664),
+            rgba(46, 84, 255, 0.2)
+          );
         }
       }
     }
@@ -90,10 +56,8 @@ body {
     & > :nth-child(3) {
       height: 95px;
       > .error {
-        display: none;
+        @include fw.error-style;
         flex-direction: row;
-        font-size: 12px;
-        color: rgba(255, 0, 0, 0.6);
         text-align: left;
       }
     }
