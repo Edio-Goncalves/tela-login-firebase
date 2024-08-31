@@ -1,3 +1,5 @@
+/* manter usuario logado caso ja tenha logado */
+
 const form = {
   email: () => document.querySelector("#email"),
   emailInvalidError: () => document.querySelector("#email-invalid-error"),
