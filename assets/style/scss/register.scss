@@ -85,10 +85,11 @@ body {
       }
     }
     & > :first-child,
-    & > :nth-child(2) {
+    & > :nth-child(2),
+    & > :nth-child(3) {
       height: 95px;
       > .error {
-        // display: none;
+        display: none;
         flex-direction: row;
         font-size: 12px;
         color: rgba(255, 0, 0, 0.6);

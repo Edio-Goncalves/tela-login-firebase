@@ -27,12 +27,18 @@
         <div><label for="password">Senha</label></div>
         <input type="password" placeholder="Senha" />
         <div id="password-required-error" class="error">
-          Senha é obrigatória*
+          Senha é obrigatório*
+        </div>
+        <div id="password-min-length-error" class="error">
+          Senha tem que ter ao menos 6 caracteres*
         </div>
       </div>
       <div>
         <div><label>Confirmar senha</label></div>
         <input type="password" placeholder="Confirmar senha" />
+        <div id="password-doenst-match-error" class="error">
+          Senha e confirmar senha devem ser iguais*
+        </div>
       </div>
       <div><button class="solid" type="button">Registrar</button></div>
       <div><button class="outline" type="button">Login</button></div>
