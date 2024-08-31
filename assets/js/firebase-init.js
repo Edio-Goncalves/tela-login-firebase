@@ -8,9 +8,9 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-/* manter usuario logado caso ja tenha logado */
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    window.location.href = "/pages/home.html";
-  }
-});
+// /* manter usuario logado caso ja tenha logado */
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (user) {
+//     window.location.href = "/pages/home.html";
+//   }
+// });
