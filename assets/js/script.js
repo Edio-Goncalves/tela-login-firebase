@@ -84,13 +84,16 @@ form.register().addEventListener("click", () => {
 
 /* integra auth aos botoes e qualifica sucesso ou erro */
 function login() {
+  showLoading();
   firebase
     .auth()
     .signInWithEmailAndPassword(form.email().value, form.password().value)
     .then((response) => {
+      hideLoading();
       window.location.href = "pages/home.html";
     })
     .catch((error) => {
+      hideLoading();
       getErrorMessage(error);
       // console.log("error", error);
     });
@@ -103,5 +106,26 @@ function getErrorMessage(error) {
 }
 
 function register() {
+  showLoading();
   window.location.href = "pages/register.html";
+}
+
+/* cria funcionalidade para o botao derecuperação de email */
+form.recoverPassword().addEventListener("click", () => {
+  recoverPassword();
+});
+
+function recoverPassword() {
+  showLoading();
+  firebase
+    .auth()
+    .sendPasswordResetEmail(form.email().value)
+    .then((response) => {
+      hideLoading();
+      alert("Email enviado com sucesso");
+    })
+    .catch((error) => {
+      hideLoading();
+      alert(getErrorMessage(error));
+    });
 }
