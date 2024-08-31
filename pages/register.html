@@ -3,9 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/image/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/assets/style/css/register.css" />
     <title>Register</title>
   </head>
   <body>
-    <div>Register</div>
+    <form>
+      <div>
+        <div><label for="email">Email</label></div>
+        <input type="email" placeholder="seu@email.com" />
+        <div id="email-required-error" class="error">Email é obrigatório*</div>
+        <div id="email-required-error" class="error">Email é inválido*</div>
+      </div>
+      <div>
+        <div><label for="password">Senha</label></div>
+        <input type="password" placeholder="Senha" />
+        <div id="password-required-error" class="error">
+          Senha é obrigatória*
+        </div>
+      </div>
+      <div>
+        <div><label>Confirmar senha</label></div>
+        <input type="password" placeholder="Confirmar senha" />
+      </div>
+      <div><button class="solid" type="button">Registrar</button></div>
+      <div><button class="outline" type="button">Login</button></div>
+    </form>
   </body>
 </html>
