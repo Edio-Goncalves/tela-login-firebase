@@ -1,0 +1,31 @@
+@use "forward" as fw;
+
+body {
+  font-family: "exo 2", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+
+  header {
+    > div {
+      font-size: 20px;
+    }
+    button {
+      cursor: pointer;
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: rgb(46, 84, 255);
+      border: none;
+      border-radius: 5px;
+    }
+  }
+  div {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
