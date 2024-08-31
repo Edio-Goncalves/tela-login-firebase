@@ -39,10 +39,6 @@ function isEmailValid() {
   return validateEmail(em);
 }
 
-function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
 /* valida senha */
 function isPasswordValid() {
   let pass = form.password().value;
