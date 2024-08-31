@@ -14,7 +14,8 @@ body {
   form {
     width: 330px;
     padding: 40px;
-    background-color: rgb(232, 232, 232);
+    background-color: fw.$form-color;
+
     border-radius: 10px;
 
     div {
@@ -37,17 +38,13 @@ body {
 
       button {
         @include fw.button-style(
-          rgb(46, 84, 255),
-          #f3f3f3,
-          rgba(46, 84, 255, 0.2)
+          fw.$primary-color,
+          fw.$secondary-color,
+          fw.$accent-color
         );
 
         &.outline {
-          @include fw.button-style(
-            white,
-            rgba(0, 0, 0, 0.664),
-            rgba(46, 84, 255, 0.2)
-          );
+          @include fw.button-style(white, fw.$text-color, fw.$accent-color);
         }
       }
     }

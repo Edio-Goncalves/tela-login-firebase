@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 
   form {
     max-width: 300px;
@@ -20,8 +20,8 @@
     align-items: center;
     justify-content: center;
     padding: 40px;
-    background-color: #d3d3d37c;
-    border: 1px solid#f3f3f3;
+    background-color: fw.$form-color;
+    border: 1px solid fw.$secondary-color;
     border-radius: 10px;
 
     > :first-child,
@@ -30,7 +30,7 @@
       label {
         font-size: 12px;
         text-align: left;
-        color: rgba(0, 0, 0, 0.6);
+        color: fw.$text-color;
       }
       input {
         @include fw.input-style;
@@ -49,17 +49,13 @@
       justify-content: center;
       button {
         @include fw.button-style(
-          rgb(46, 84, 255),
-          #f3f3f3,
-          rgba(46, 84, 255, 0.2)
+          fw.$primary-color,
+          fw.$secondary-color,
+          fw.$accent-color
         );
 
         &.outline {
-          @include fw.button-style(
-            white,
-            rgba(0, 0, 0, 0.664),
-            rgba(46, 84, 255, 0.2)
-          );
+          @include fw.button-style(white, fw.$text-color, fw.$accent-color);
         }
       }
     }
