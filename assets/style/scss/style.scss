@@ -1,5 +1,9 @@
 @use "forward" as fw;
 
+.loading {
+  @include fw.loading;
+}
+
 .login {
   font-family: "Exo 2", sans-serif;
   width: 100%;
