@@ -14,6 +14,13 @@ const form = {
   loginButton: () => document.getElementById("login-button"),
 };
 
+/* manter usuario logado caso ja tenha logado */
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    window.location.href = "/pages/home.html";
+  }
+});
+
 form.email().addEventListener("input", (e) => {
   const email = form.email().value;
   form.emailRequiredError().style.display = email ? "none" : "block";

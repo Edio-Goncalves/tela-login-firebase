@@ -7,3 +7,10 @@ const firebaseConfig = {
   appId: "1:809242408627:web:5219ad64cb35cd0584e2c6",
 };
 firebase.initializeApp(firebaseConfig);
+
+/* manter usuario logado caso ja tenha logado */
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    window.location.href = "/pages/home.html";
+  }
+});
