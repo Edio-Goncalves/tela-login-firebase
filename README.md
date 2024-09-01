@@ -21,13 +21,13 @@ Este projeto apresenta uma tela de login totalmente responsiva, desenvolvida em 
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/Edio-Goncalves/tela-login-firebase
 ```
 
-2. Instale as dependências (se necessário):
+2. Navegue até o diretório do projeto:
 
 ```bash
- npm install
+tela-login-firebase
 ```
 
 3. Execute o projeto: Abra o arquivo `index.html` no seu navegador.
